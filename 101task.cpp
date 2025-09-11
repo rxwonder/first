@@ -51,7 +51,7 @@ public:
         }
         if (withdraw(amount)) {
             target->deposit(amount);
-            cout << "Transfer successful to: " << amount << " from " << owner_name 
+            cout << "Transfer successful to from dev: " << amount << " from " << owner_name 
                  << " to " << target->owner_name << "\n";
         }
     }
