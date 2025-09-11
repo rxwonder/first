@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build SFML App (Static)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "main.cpp",
+                "-DSFML_STATIC",
+                "-I", "${workspaceFolder}/SFML-3.0.0/include",
+                "-L", "${workspaceFolder}/SFML-3.0.0/lib",
+                "-lsfml-graphics-s",
+                "-lsfml-window-s",
+                "-lsfml-system-s",
+                "-lopengl32",
+                "-lfreetype",
+                "-lwinmm",
+                "-lgdi32",
+                "-o", "sfml-app.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "isBackground": false
+        }
+    ]
+}
