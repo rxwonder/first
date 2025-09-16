@@ -35,31 +35,35 @@ class finance{
             wastes = (double)data[i] / tool;
             if(data[i] / 100 >= 0){
             cout<<"for: "<<data[i]<<"\t";
-            string graph = draw_percent(wastes);
+            string graph = draw_percent(wastes,size);
             cout<<graph<<endl;
             continue;
         } if(data[i] / 10 >= 0) {
             cout<<"for: "<<data[i]<<" \t";
-            string graph = draw_percent(wastes);
+            string graph = draw_percent(wastes,size);
             cout<<graph<<endl;
             continue;
         }else{
-            continue;
+            
             cout<<"for: "<<data[i]<<"  \t";
-            string graph = draw_percent(wastes);
+            string graph = draw_percent(wastes,size);
             cout<<graph<<endl;
+            continue;
         }
 
         }
     }
-    string draw_percent(double wastes) {
+    string draw_percent(double wastes,int size) {
     string result;
-    int count = (int)(wastes / 2);
+    int count = 0;
+    while(wastes){
+    count += (int)(wastes / 2);
     for(int i = 0; i < count; i++) {
-        result += "#";
+        result += "-";
     }
     return result;
 }
+    }
     void show_sum(){
         cout<<balance<<endl;
     }
